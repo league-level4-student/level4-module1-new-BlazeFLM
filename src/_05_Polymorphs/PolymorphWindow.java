@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -38,15 +39,15 @@ import javax.swing.Timer;
  * PolymorphWindow class.
  * 
  * 11. Create an ArrayList of Polymorph inside your PolymorphWindow class.
- * 
+ * 	
  * 12. Initialize the ArrayList and add a bunch of different types of
  * Polymorph subclass objects to the ArrayList.
- * 
+ * 	
  * 13. Use loops to call the draw and update method for all the Polymorphs in 
  * the list.
  * 
  * 14. Create a Polymorph that follows your mouse. Hint: The MouseMotionListener
- *  interface.
+ *  interface. (INCOMPLETE)
  * 
  * 15. Create a Polymorph that displays a JOptionPane Message Dialog when
  *  clicked. Hint: MouseListener interface.
@@ -61,7 +62,11 @@ public class PolymorphWindow extends JPanel implements ActionListener {
     private Timer timer;
 
     Polymorph bluePoly;
+    Polymorph redPoly;
+    Polymorph movingPoly;
 
+    ArrayList<Polymorph> polyList = new ArrayList<Polymorph>();
+    
     public static void main(String[] args) {
         new PolymorphWindow().buildWindow();
     }
@@ -74,8 +79,14 @@ public class PolymorphWindow extends JPanel implements ActionListener {
         window.pack();
         window.setVisible(true);
 
-        bluePoly = new BluePolymorph(50, 50);
-
+//        bluePoly = new BluePolymorph(200, 50, 20, 200);
+//        redPoly = new RedPolymorph(50, 50, 100, 50);
+//        movingPoly = new MovingMorph(450, 400, 20, 20);
+        
+        polyList.add(new BluePolymorph(200, 50, 20, 200));
+        polyList.add(new RedPolymorph(50, 50, 100, 50));
+        polyList.add(new MovingMorph(450, 400, 20, 20));
+        
         timer = new Timer(1000 / 30, this);
         timer.start();
     }
@@ -86,13 +97,25 @@ public class PolymorphWindow extends JPanel implements ActionListener {
         g.fillRect(0, 0, 500, 500);
 
         // draw polymorph
-        bluePoly.draw(g);
+//        movingPoly.draw(g);
+//        bluePoly.draw(g);
+//        redPoly.draw(g);
+        
+        for(Polymorph p : polyList) {
+        	p.draw(g);
+        }
+        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         repaint();
-        bluePoly.update();
-
+//        bluePoly.update();
+//        redPoly.update();
+//        movingPoly.update();
+        
+        for(Polymorph p : polyList) {
+        	p.update();
+        }
     }
 }
