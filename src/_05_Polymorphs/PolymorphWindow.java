@@ -47,10 +47,10 @@ import javax.swing.Timer;
  * the list.
  * 
  * 14. Create a Polymorph that follows your mouse. Hint: The MouseMotionListener
- *  interface. (INCOMPLETE)
+ *  interface.
  * 
  * 15. Create a Polymorph that displays a JOptionPane Message Dialog when
- *  clicked. Hint: MouseListener interface.
+ *  clicked. Hint: MouseListener interface. (NOT WORKING)
  */
 
 public class PolymorphWindow extends JPanel implements ActionListener {
@@ -61,9 +61,11 @@ public class PolymorphWindow extends JPanel implements ActionListener {
     private JFrame window;
     private Timer timer;
 
-    Polymorph bluePoly;
-    Polymorph redPoly;
-    Polymorph movingPoly;
+//    Polymorph bluePoly;
+//    Polymorph redPoly;
+//    Polymorph movingPoly;
+//    Polymorph mousePoly;
+    
 
     ArrayList<Polymorph> polyList = new ArrayList<Polymorph>();
     
@@ -86,6 +88,13 @@ public class PolymorphWindow extends JPanel implements ActionListener {
         polyList.add(new BluePolymorph(200, 50, 20, 200));
         polyList.add(new RedPolymorph(50, 50, 100, 50));
         polyList.add(new MovingMorph(450, 400, 20, 20));
+        MousePoly mousePoly = new MousePoly(450, 300, 10, 10);
+        polyList.add(mousePoly);
+        MessagePoly messagePoly = new MessagePoly(200, 300, 100, 100);
+        polyList.add(messagePoly);
+        
+        this.addMouseMotionListener(mousePoly);
+        this.addMouseListener(messagePoly);
         
         timer = new Timer(1000 / 30, this);
         timer.start();
