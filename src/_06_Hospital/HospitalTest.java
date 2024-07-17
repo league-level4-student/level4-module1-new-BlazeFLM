@@ -22,7 +22,7 @@ import junit.framework.TestCase;
  * 
  * 5. Create a Hospital class capable of holding lists of Doctors and unassigned 
  * Patients, adding to both lists and assigning up to a maximum of 3 Patients to
- *  Doctors.
+ * Doctors.
  * 
  * 6. Create a DoctorFullException. A Doctor should throw this exception 
  * whenever more than three patients are being assigned to them.
