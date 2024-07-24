@@ -11,7 +11,7 @@ import junit.framework.TestCase;
 /* 
  * 1. Create a Patient class capable of feeling cared for and having their pulse 
  * checked.
- * 
+ * z
  * 2. Create a Doctor abstract class capable of doing medicine, holding a list 
  * of assigned Patients, assigning patients to the list and getting the list.
  * 

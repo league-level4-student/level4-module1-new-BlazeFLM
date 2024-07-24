@@ -10,7 +10,7 @@ public abstract class Doctor {
 		patientList = new ArrayList<Patient>();
 	}
 	
-	public abstract void assignPatient(Patient p);
+	public abstract void assignPatient(Patient p) throws DoctorFullException;
 	
 	public abstract ArrayList<Patient> getPatients();
 	

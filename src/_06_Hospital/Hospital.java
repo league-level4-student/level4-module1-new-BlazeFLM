@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Hospital {
 	
-	private ArrayList<Doctor> doctorList;
-	private ArrayList<Patient> unassignedPatientList;
+	private ArrayList<Doctor> doctorList = new ArrayList<Doctor>();
+	private ArrayList<Patient> unassignedPatientList = new ArrayList<Patient>();
 	
 	public void addDoctor(Doctor d) {
 		doctorList.add(d);
@@ -21,5 +21,9 @@ public class Hospital {
 	
 	public ArrayList<Patient> getPatients(){
 		return unassignedPatientList;
+	}
+	
+	public void assignPatientsToDoctors() {
+		
 	}
 }

@@ -5,8 +5,11 @@ import java.util.ArrayList;
 public class GeneralPractitioner extends Doctor {
 	
 	@Override
-	public void assignPatient(Patient p) {
+	public void assignPatient(Patient p) throws DoctorFullException {
 		// TODO Auto-generated method stub
+		if (patientList.size() >= 3) {
+            throw new DoctorFullException("Cannot assign more than three patients to this doctor.");
+        }
 		patientList.add(p);
 	}
 
