@@ -8,7 +8,7 @@ public class GeneralPractitioner extends Doctor {
 	public void assignPatient(Patient p) throws DoctorFullException {
 		// TODO Auto-generated method stub
 		if (patientList.size() >= 3) {
-            throw new DoctorFullException("Cannot assign more than three patients to this doctor.");
+            throw new DoctorFullException("Cannot assign more than three patients to this General Practitioner.");
         }
 		patientList.add(p);
 	}
